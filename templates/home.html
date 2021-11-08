@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+	<br/>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container-fluid">
+		<div class="p-3 mb-2 bg-success text-white"></div>
+		<h1 class="display-3">Ski Mountain Locator App</h1>
+		<p class="lead">Check out resorts in your area!</p>
+		{% if user.is_authenticated %}
+		<p class="lead">
+			<a class="btn btn-success btn-block" href="{% url 'resorts_view' %}"
+			role="button">Find Resorts</a>
+		</p>
+		{% else %}
+				<form class="form-inline ml-auto">
+					<a href="{% url 'login' %}" class="btn btn-outline-secondary">
+					Log In</a>
+					<a href="{% url 'signup' %}" class="btn btn-success">
+					Sign up</a>
+				</form>
+		{% endif %}
+	</div>
+{% endblock content %}

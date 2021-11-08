@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Resorts{% endblock title %}
+
+{% block content %}
+<br/>
+<div class="jumbotron jumbotron-fluid">
+	<div class="p-3 mb-2 bg-success text-white"></div>
+	<div class="container-fluid">
+	<h1 class="display-4">Ski Mountain Locator App</h1>
+	<div class="p-3 mb-2 bg-success text-white">Here's a list of resorts in your area!</div>
+	<p><a href="{% url 'location_directions' %}">Ski resort 1</a></p>
+	<p><a href="{% url 'location_directions' %}">Ski resort 2</a></p>
+	<p><a href="{% url 'location_directions' %}">Ski resort 3</a></p>
+	<p><a href="{% url 'location_directions' %}">Ski resort 4</a></p>
+	<p><a href="{% url 'location_directions' %}">Ski resort 5</a></p>
+	<p><a href="{% url 'location_directions' %}">Ski resort 6</a></p>
+
+
+
+{% endblock content %}
