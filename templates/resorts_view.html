@@ -4,18 +4,19 @@
 
 {% block content %}
 <br/>
-<div class="jumbotron jumbotron-fluid" style="background: url(/static/images/cloud.jpg);">
+<div class="jumbotron jumbotron-fluid" style="background: url(/static/images/mountain_crop2.jpg);">
 	<div class="p-3 mb-2 bg-success text-white"></div>
-	<div class="container-fluid">
-	<h1 class="display-4">Ski Mountain Locator App</h1>
+	<div class="container-fluid"> 
+	<h1 class="display-4">Ski Mountain Locator App </h1>
 	<div class="p-3 mb-2 bg-success text-white">Here's a list of resorts in your area!</div>
-	<p><a href="{% url 'location_directions' %}">Ski resort 1</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
-	<p><a href="{% url 'location_directions' %}">Ski resort 2</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
-	<p><a href="{% url 'location_directions' %}">Ski resort 3</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
-	<p><a href="{% url 'location_directions' %}">Ski resort 4</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
-	<p><a href="{% url 'location_directions' %}">Ski resort 5</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
-	<p><a href="{% url 'location_directions' %}">Ski resort 6</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Ski resort 1</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Ski resort 2</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Ski resort 3</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block" href="{% url 'location_directions' %}">Ski resort 4</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Ski resort 4</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block" href="{% url 'location_directions' %}">Ski resort 5</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
+	<p><a class="btn btn-success btn-block" href="{% url 'location_directions' %}">Ski resort 6</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
 
-
-
+	<p><a class="btn btn-success btn-block" href="{% url 'location_directions' %}" role="button">Ski resort 7</a>
+	<div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 15th</div></p>
 {% endblock content %}
