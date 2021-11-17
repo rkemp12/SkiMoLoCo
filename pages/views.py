@@ -9,3 +9,12 @@ class ResortsPageView(TemplateView):
 
 class LocationPageView(TemplateView):
 	template_name = 'location_directions.html'
+
+class LocationPageView2(TemplateView):
+	template_name = 'location_directions_2.html'
+
+class LocationPageView3(TemplateView):
+	template_name = 'location_directions_3.html'
+
+class LocationPageView4(TemplateView):
+	template_name = 'location_directions_4.html'
