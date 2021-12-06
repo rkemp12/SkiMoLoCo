@@ -1,8 +1,11 @@
 from django.urls import path
-from .views import (HomePageView, ResortsPageView, LocationPageView)
+from .views import (HomePageView, ResortsPageView, LocationPageView, LocationPageView2, LocationPageView3, LocationPageView4)
 
 
 urlpatterns = [
+path('location4/', LocationPageView4.as_view(), name='location_directions_4'),
+path('location3/', LocationPageView3.as_view(), name='location_directions_3'),
+path('location2/', LocationPageView2.as_view(), name='location_directions_2'),
 path('location/', LocationPageView.as_view(), name='location_directions'),
 path('resorts/', ResortsPageView.as_view(), name='resorts_view'),
 path('', HomePageView.as_view(), name='home'),
