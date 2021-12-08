@@ -18,3 +18,6 @@ class LocationPageView3(TemplateView):
 
 class LocationPageView4(TemplateView):
 	template_name = 'location_directions_4.html'
+
+class MapPageView(TemplateView):
+	template_name = 'google_maps.html'
