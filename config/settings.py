@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     #Local Apps
     'accounts',
     'pages',
-    'scraping.apps.ScrapingConfig',
+    'scraping',
+    
 ]
 
 MIDDLEWARE = [
@@ -140,9 +141,11 @@ LOGOUT_REDIRECT_URL = 'home'
 #CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-CELERY_BROKER_URL = 'amqp://localhost:15672/#/'
+'''
+CELERY_BROKER_URL = 'pyamqp://'
 CELERY_RESULT_BACKEND = "rpc://"
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'MST'
+'''

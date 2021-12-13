@@ -1,27 +1,17 @@
 from django.views.generic import TemplateView
 from scraping.models import MountainDates
+from django.shortcuts import render
+from scraping.tasks import mountain_rss
 
 class HomePageView(TemplateView):
 	template_name = 'home.html'
 
-class ResortsPageView(TemplateView):
-		
-	def get_context_data(self, **kwargs):
-		
-		context = super().get_context_data(**kwargs)
-		data = MountainDates.objects.filter(mountain='snowbowl')
-		context['snowbowlDate'] = data
-
-		
-		if MountainDates.mountain == 'snowbowl':
-			context['date'] = MountainDates.winter_season
-		elif MountainDates.mountain == 'bigsky':
-			context['date'] = MountainDates.winter_season
-		
-		return context	
-	
-	
-	template_name = 'resorts_view.html'
+def mountain_details(request):
+	mountain_rss()
+	dates_list = MountainDates.objects.all()
+	return render(request, 'resorts_view.html',
+	{'dates_list': dates_list})
+	 
 
 class LocationPageView(TemplateView):
 	template_name = 'location_directions.html'

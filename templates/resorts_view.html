@@ -7,11 +7,33 @@
 <div class="jumbotron jumbotron-fluid" style="background: url(/static/images/mountain_crop2.jpg);">
 	<div class="p-3 mb-2 bg-success text-white"></div>
 	<div class="container-fluid"> 
-	<h1 class="display-4">Ski Mountain Locator App </h1>
+	<h1 class="display-4"><strong>Mountain Locator App</strong></h1>
 	<div class="p-3 mb-2 bg-success text-white">Here's a list of resorts in your area!</div>
-	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Big Sky Ski Resort</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens November 25 to April 24th</div></p>
-	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions_2' %}">Montana SnowBowl</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 22nd to April 11th</div></p>
-	<p><a class="btn btn-success btn-block"  href="{% url 'location_directions_3' %}">Lost Trail Ski Area</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 3rd to April 15th</div></p>
-	<p><a class="btn btn-success btn-block" href="{% url 'location_directions_4' %}">Discovery Ski Resort</a><div class="d-inline p-2 bg-primary text-white">Winter season dates: opens December 1st-April 04th</div></p>
-
+{% for mountain in dates_list %}	
+		{% if mountain.mountain == "bigsky" %}
+			<p><a class="btn btn-success btn-block"  href="{% url 'location_directions' %}">Big Sky Ski Resort</a>
+				<div class="d-inline p-2 bg-primary text-white"><strong>Winter season dates: </strong><br/><br/> Opens: {{ mountain.winter_season_open }}<br/><br/>Closes: {{ mountain.winter_season_close }}</div>
+				<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Summer Season Dates: </strong><br/><br/> Opens: {{ mountain.summer_season_open }}  <br/><br/>Closes: {{ mountain.summer_season_close }}</div>
+				<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Website Url:</strong> {{ mountain.link }}</div>
+			</p>
+		{% elif mountain.mountain == "snowbowl" %}
+			<p><a class="btn btn-success btn-block"  href="{% url 'location_directions_2' %}">Montana SnowBowl</a>
+				<div class="d-inline p-2 bg-primary text-white"><strong>Winter season dates: </strong><br/><br/> Opens: N/A<br/><br/>Closes: {{ mountain.winter_season_close }}</div>
+				<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Summer Season Dates: </strong><br/><br/>Opens: {{ mountain.summer_season_open }}<br/><br/>Closes: {{ mountain.summer_season_close }}</div>
+				<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Website Url:</strong> {{ mountain.link }}</div>
+			</p>
+		{% elif mountain.mountain == "discovery_ski" %}
+		<p>
+			<a class="btn btn-success btn-block" href="{% url 'location_directions_4' %}">Discovery Ski Resort</a>
+			<div class="d-inline p-2 bg-primary text-white"><strong>Winter season dates:</strong><br/><br/> Opens: {{ mountain.winter_season_open }}<br/><br/>Closes: {{ mountain.winter_season_close }}</div>
+			<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Summer Season Dates: </strong><br/><br/> Opens: {{ mountain.summer_season_open }} <br/><br/>Closes: {{ mountain.summer_season_close }}</div>
+			<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Website Url:</strong> {{ mountain.link }}</div>
+		</p>
+		{% endif %}	
+{% endfor %}
+<p><a class="btn btn-success btn-block"  href="{% url 'location_directions_3' %}">Lost Trail Ski Area</a>
+	<div class="d-inline p-2 bg-primary text-white"><strong>Winter season dates: </strong><br/><br/> Opens: Dec 16th<br/><br/>Closes: April 15th</div>
+	<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Summer Season Dates: </strong><br/><br/> Opens: N/A<br/><br/>Closes: N/A</div>
+	<br/><br/><div class="d-inline p-2 bg-primary text-white"><strong>Website Url:</strong> https://losttrail.com/events-calendar/</div>
+</p>
 {% endblock content %}
