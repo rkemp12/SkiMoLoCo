@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django-crispy-forms = "==1.9.2"
+django-crispy-forms = "~=1.9.2"
 django = "~=3.1.0"
 whitenoise = "==5.1.0"
 gunicorn = "==19.9.0"
 environs = {version = "==8.0.0", extras = ["django"]}
+requests = "~=2.26.0"
+beautifulsoup4 = "~=4.9.3"
 
 [dev-packages]
 
