@@ -43,7 +43,7 @@ def mountain_rss():
                     'summer_season_close' : summer_season_close,
                     'link':link                    
                 }
-                print(scraped_details)
+                
                        
             
             if mount.name == 'snowbowl':
@@ -78,7 +78,7 @@ def mountain_rss():
                         txt_list = txt.split('-')                        
                         summer_season_open = txt_list[0]
                         summer_season_close = txt_list[2]
-                        print(summer_season_close)
+                        
                     
                 scraped_details = {
                     'mountain' : mountain,
@@ -91,8 +91,7 @@ def mountain_rss():
                 
                     
                 
-            mountain_list.append(scraped_details) 
-            print(mountain_list)                       
+            mountain_list.append(scraped_details)                        
             save_function(mountain_list)
             mountain_list.clear()
             
@@ -109,7 +108,7 @@ def save_function(mountain_list):
     
     try:
         latest_date = MountainDates.objects.filter(winter_season_open = winter_season_open).order_by('-id')[0]
-        print(latest_date)
+        
     except Exception as e:
         print(e)
         error = False
